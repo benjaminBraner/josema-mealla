@@ -1,0 +1,63 @@
+import './Hero.css'
+
+const Hero = () => {
+  return (
+    <section className="hero" id="inicio">
+      <div className="hero__bg-grid" />
+      <div className="hero__bg-glow" />
+
+      <div className="container hero__content">
+        <div className="hero__badge">
+          <span className="hero__badge-dot" />
+          Disponible para nuevos proyectos
+        </div>
+
+        <h1 className="hero__headline">
+          Convertí tu experiencia
+          <br />
+          <em>en una marca que vende.</em>
+        </h1>
+
+        <p className="hero__subheadline">
+          Ayudo a profesionales y empresarios a construir su autoridad digital,
+          atraer los clientes correctos y escalar sin depender del azar.
+        </p>
+
+        <div className="hero__actions">
+          <a href="#agendar" className="btn-primary">
+            Agendar llamada gratuita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#sobre-mi" className="btn-outline">
+            Conocer más
+          </a>
+        </div>
+
+        <div className="hero__stats">
+          <div className="hero__stat">
+            <span className="hero__stat-number">+50</span>
+            <span className="hero__stat-label">clientes transformados</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-number">3x</span>
+            <span className="hero__stat-label">crecimiento promedio</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-number">5 años</span>
+            <span className="hero__stat-label">de experiencia</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="hero__scroll-hint">
+        <span />
+      </div>
+    </section>
+  )
+}
+
+export default Hero

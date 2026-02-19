@@ -1,0 +1,32 @@
+.mouse-glow {
+  /* Centered on cursor via JS transform */
+  position: fixed;
+  top: -250px;
+  left: -250px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+
+  /* Smooth trailing effect — gives a premium "lag" feel */
+  transition: transform 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Neon blue glow — soft multi-stop fade, no visible circle edge */
+  background: radial-gradient(
+    circle at center,
+    rgba(91, 159, 239, 0.10) 0%,
+    rgba(91, 159, 239, 0.04) 30%,
+    rgba(91, 159, 239, 0.01) 60%,
+    transparent 80%
+  );
+  mix-blend-mode: screen;
+}
+
+/* Disable on touch devices (no cursor) */
+@media (hover: none) {
+  .mouse-glow {
+    display: none;
+  }
+}
