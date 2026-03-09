@@ -20,23 +20,34 @@ const About = () => {
         <div className="about__text">
           <p className="eyebrow">Sobre mí</p>
           <h2 className="section-title">
-            Sé exactamente por<br />
-            <em>donde estás pasando.</em>
+            Soy Jose Maria Mealla.<br />
+            <em className="about__subtitle">Y sé exactamente lo que está pasando en tu negocio.</em>
           </h2>
           <div className="about__body">
             <p>
-              Durante años trabajé sin una estrategia clara: publicaba contenido,
-              asistía a eventos, hablaba con personas… pero los resultados no llegaban.
-              Hasta que entendí que el problema no era mi trabajo, sino mi posicionamiento.
+              Durante mucho tiempo vi a coaches e infoproductores crear más contenido,
+              lanzar más ofertas y hasta mejorar sus mentorías… pero seguir con ventas
+              inestables. No era falta de talento. No era falta de conocimiento.
+              Era falta de sistema.
             </p>
             <p>
-              Cuando ordené mi mensaje, definí mi cliente ideal y construí un sistema de
-              atracción, todo cambió. Las oportunidades empezaron a llegar, y los clientes
-              correctos empezaron a encontrarme.
+              El problema no está en tu curso. Está en que no tenés una estructura
+              clara que atraiga volumen, lo filtre y lo convierta de forma predecible.
             </p>
             <p>
-              Hoy acompaño a profesionales y empresarios a hacer lo mismo: construir una
-              presencia digital que genere confianza, visibilidad y ventas reales.
+              Cuando entendí que el crecimiento no depende de "hacer más", sino de
+              optimizar ángulos, construir embudos y automatizar procesos, todo cambió.
+              Las ventas dejaron de ser suerte y empezaron a ser números.
+            </p>
+            <p>
+              Hoy mi enfoque está 100% en ayudar a infoproductores y coaches que ya
+              facturan, pero quieren escalar en serio. Creamos sistemas con contenido
+              estratégico, ads, automatizaciones y estructuras de venta que convierten
+              audiencia en clientes.
+            </p>
+            <p>
+              Porque escalar no es trabajar más.
+              <br /><strong>Es tener un sistema que venda por vos.</strong>
             </p>
           </div>
           <a href="#agendar" className="btn-outline about__cta">

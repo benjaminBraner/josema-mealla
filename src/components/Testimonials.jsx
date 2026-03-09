@@ -3,24 +3,39 @@ import './Testimonials.css'
 const testimonials = [
   {
     quote:
-      '"Antes de trabajar con Josema, publicaba contenido sin dirección. En 60 días tenía un sistema claro, clientes nuevos y por primera vez sentí que mi negocio tenía estructura real."',
-    name: 'Valentina Ríos',
-    role: 'Coach de vida',
-    initial: 'V',
+      '"Empezamos prácticamente desde cero y tuvimos resultados en las primeras semanas. Hay cosas que nosotros como emprendedores o empresarios no sabemos pero profesionales como Jose Maria nos dan esa claridad."',
+    name: 'Yosselin Rivero',
+    initial: 'Y',
   },
   {
     quote:
-      '"Lo que más me sorprendió fue la velocidad. En pocas semanas pasé de no saber qué publicar a tener una agenda llena de consultas. El cambio fue inmediato y sostenido."',
-    name: 'Martín Castellano',
-    role: 'Consultor financiero',
-    initial: 'M',
+      '"Estoy muy contenta porque lo que se planteó al comienzo se cumplió, como ser las metas de ventas y las metas de crecimiento con la estrategia de contenido."',
+    name: 'Gisela Soliz',
+    initial: 'G',
   },
   {
     quote:
-      '"Josema no te da fórmulas genéricas. Construye una estrategia pensada para vos, para tu negocio. Eso marca toda la diferencia. Los resultados hablan solos."',
-    name: 'Carolina Ibáñez',
-    role: 'Mentora de emprendedores',
-    initial: 'C',
+      '"Algo que favorece al trabajar con Jose Maria es que se vuelve un amigo más que un socio en este proceso para crecer el negocio digital, así que estoy feliz por los resultados."',
+    name: 'Randy Aguanta',
+    initial: 'R',
+  },
+  {
+    quote:
+      '"Los recomendaría totalmente si lo que quieren es aumentar sus ventas y promocionar su marca de la mano de profesionales como Jose Maria."',
+    name: 'Arnold Alexander',
+    initial: 'A',
+  },
+  {
+    quote:
+      '"Muchas personas piensan que solo te van a sacar dinero pero les digo que confíen porque como fue mi caso después van a conseguir resultados, así que los recomiendo."',
+    name: 'Hugo Colque',
+    initial: 'H',
+  },
+  {
+    quote:
+      '"Logramos llegar a un público de clientes que no habíamos llegado antes y nos iba a costar mucho tiempo, pero gracias al contenido y los ads pudimos ver resultados en las primeras semanas."',
+    name: 'Donny Vargas',
+    initial: 'D',
   },
 ]
 
@@ -29,16 +44,22 @@ const Testimonials = () => {
     <section className="testimonials section" id="testimonios">
       <div className="container">
         <div className="testimonials__header">
-          <p className="eyebrow">Testimonios</p>
+          <p className="eyebrow">Casos de éxito</p>
           <h2 className="section-title">
-            Ellos ya tomaron<br />
-            <em>la decisión.</em>
+            Personas que han trabajado conmigo<br />
+            <em>y cuentan su experiencia.</em>
           </h2>
         </div>
 
         <div className="testimonials__grid">
           {testimonials.map((t, i) => (
             <div className="testimonial-card" key={i}>
+              <div className="testimonial-card__video-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--accent)" stroke="none" opacity="0.3">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <span>Video próximamente</span>
+              </div>
               <div className="testimonial-card__stars">
                 {Array(5).fill(null).map((_, s) => (
                   <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)" stroke="none">
@@ -51,7 +72,6 @@ const Testimonials = () => {
                 <div className="testimonial-card__avatar">{t.initial}</div>
                 <div>
                   <p className="testimonial-card__name">{t.name}</p>
-                  <p className="testimonial-card__role">{t.role}</p>
                 </div>
               </div>
             </div>
@@ -63,3 +83,4 @@ const Testimonials = () => {
 }
 
 export default Testimonials
+

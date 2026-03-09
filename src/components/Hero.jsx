@@ -13,14 +13,14 @@ const Hero = () => {
         </div>
 
         <h1 className="hero__headline">
-          Convertí tu experiencia
+          Escala tu negocio y vende
           <br />
-          <em>en una marca que vende.</em>
+          <em>todos los días o no pagas</em>
         </h1>
 
         <p className="hero__subheadline">
-          Ayudo a profesionales y empresarios a construir su autoridad digital,
-          atraer los clientes correctos y escalar sin depender del azar.
+          Si vendes tu mentoría o curso te ayudo a aumentar tus ventas
+          atrayendo y cerrando clientes calificados con 4 claves.
         </p>
 
         <div className="hero__actions">

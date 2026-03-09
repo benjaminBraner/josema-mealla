@@ -1,7 +1,7 @@
 import './Schedule.css'
 
 const Schedule = () => {
-  const CALENDLY_URL = 'https://calendly.com/josemamealla'
+  const CALENDLY_URL = 'https://calendly.com/benbm8256/30min'
 
   return (
     <section className="schedule section" id="agendar">
@@ -16,8 +16,8 @@ const Schedule = () => {
               <em>cambiar tu negocio.</em>
             </h2>
             <p className="schedule__desc">
-              En esta llamada gratuita analizamos tu situación actual, identificamos 
-              los puntos de palanca clave y te cuento cómo puedo ayudarte a lograr 
+              En esta llamada gratuita analizamos tu situación actual, identificamos
+              los puntos de palanca clave y te cuento cómo puedo ayudarte a lograr
               tus objetivos. Sin compromiso, sin presión.
             </p>
 

@@ -82,6 +82,24 @@
   line-height: 1.7;
 }
 
+.method__step-subtitle {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.method__step-highlight {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-top: 12px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  line-height: 1.6;
+}
+
 .method__cta {
   text-align: center;
 }
