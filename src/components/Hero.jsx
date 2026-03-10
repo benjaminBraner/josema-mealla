@@ -1,5 +1,8 @@
 import './Hero.css'
 
+const YOUTUBE_VIDEO_ID = '_67MWD7XW9Q'
+const YOUTUBE_PARAMS = 'si=IuTN9r5BuC2vLZxR&controls=0'
+
 const Hero = () => {
   return (
     <section className="hero" id="inicio">
@@ -23,15 +26,26 @@ const Hero = () => {
           atrayendo y cerrando clientes calificados con 4 claves.
         </p>
 
+        <div className="hero__video-wrap">
+          <div className="hero__video-player">
+            <iframe
+              src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?${YOUTUBE_PARAMS}`}
+              title="Josema Mealla — Cómo funciona el método"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          <div className="hero__video-glow" />
+        </div>
+
         <div className="hero__actions">
           <a href="#agendar" className="btn-primary">
             Agendar llamada gratuita
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
-          <a href="#sobre-mi" className="btn-outline">
-            Conocer más
           </a>
         </div>
 
@@ -61,3 +75,4 @@ const Hero = () => {
 }
 
 export default Hero
+

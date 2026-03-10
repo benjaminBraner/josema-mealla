@@ -2,7 +2,6 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import VideoSection from './components/VideoSection'
 import Method from './components/Method'
 import Testimonials from './components/Testimonials'
 import Schedule from './components/Schedule'
@@ -19,7 +18,6 @@ function App() {
       <main>
         <Hero />
         <About />
-        <VideoSection />
         <Method />
         <Testimonials />
         <Schedule />
