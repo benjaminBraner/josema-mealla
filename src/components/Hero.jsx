@@ -26,7 +26,7 @@ const Hero = () => {
           atrayendo y cerrando clientes calificados con 4 claves.
         </p>
 
-        <div className="hero__video-wrap">
+        {/* <div className="hero__video-wrap">
           <div className="hero__video-player">
             <iframe
               src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?${YOUTUBE_PARAMS}`}
@@ -38,7 +38,7 @@ const Hero = () => {
             />
           </div>
           <div className="hero__video-glow" />
-        </div>
+        </div> */}
 
         <div className="hero__actions">
           <a href="#agendar" className="btn-primary">
@@ -51,7 +51,7 @@ const Hero = () => {
 
         <div className="hero__stats">
           <div className="hero__stat">
-            <span className="hero__stat-number">+50</span>
+            <span className="hero__stat-number">+10</span>
             <span className="hero__stat-label">clientes transformados</span>
           </div>
           <div className="hero__stat-divider" />
@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-number">5 años</span>
+            <span className="hero__stat-number">3 años</span>
             <span className="hero__stat-label">de experiencia</span>
           </div>
         </div>
