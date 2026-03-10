@@ -84,22 +84,66 @@ const StarIcon = () => (
 const TestimonialCard = ({ testimonial, index }) => {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isBuffering, setIsBuffering] = useState(false)
+  const [wantsToPlay, setWantsToPlay] = useState(false)
 
   const togglePlay = () => {
     const video = videoRef.current
     if (!video) return
 
-    if (video.paused) {
-      video.play()
-      setIsPlaying(true)
-    } else {
+    if (video.paused && !wantsToPlay) {
+      setWantsToPlay(true)
+      setIsBuffering(true)
+
+      // Start loading the video fully
+      video.preload = 'auto'
+      video.load()
+
+      const tryPlay = () => {
+        // Check if we have enough buffer (at least 3 seconds ahead or fully loaded)
+        if (video.readyState >= 3) {
+          video.play().then(() => {
+            setIsPlaying(true)
+            setIsBuffering(false)
+          }).catch(() => {
+            setIsBuffering(false)
+            setWantsToPlay(false)
+          })
+        } else {
+          // Wait a bit more for buffer
+          setTimeout(tryPlay, 200)
+        }
+      }
+
+      // Listen for enough data
+      video.addEventListener('canplay', tryPlay, { once: true })
+
+      // Fallback: if canplay already fired
+      if (video.readyState >= 3) {
+        tryPlay()
+      }
+    } else if (!video.paused) {
       video.pause()
       setIsPlaying(false)
+      setWantsToPlay(false)
     }
   }
 
   const handleVideoEnd = () => {
     setIsPlaying(false)
+    setWantsToPlay(false)
+  }
+
+  const handleWaiting = () => {
+    if (isPlaying) setIsBuffering(true)
+  }
+
+  const handleCanPlayThrough = () => {
+    setIsBuffering(false)
+  }
+
+  const handlePlaying = () => {
+    setIsBuffering(false)
   }
 
   return (
@@ -115,12 +159,26 @@ const TestimonialCard = ({ testimonial, index }) => {
           preload="metadata"
           playsInline
           onEnded={handleVideoEnd}
+          onWaiting={handleWaiting}
+          onCanPlayThrough={handleCanPlayThrough}
+          onPlaying={handlePlaying}
           className="testimonial-card__video-el"
         />
-        <div className={`testimonial-card__play-overlay ${isPlaying ? 'testimonial-card__play-overlay--hidden' : ''}`}>
+
+        {/* Loading spinner */}
+        {isBuffering && (
+          <div className="testimonial-card__loading-overlay">
+            <div className="testimonial-card__spinner" />
+          </div>
+        )}
+
+        {/* Play overlay */}
+        <div className={`testimonial-card__play-overlay ${isPlaying || isBuffering ? 'testimonial-card__play-overlay--hidden' : ''}`}>
           <PlayIcon />
         </div>
-        {isPlaying && (
+
+        {/* Pause overlay (visible on hover when playing) */}
+        {isPlaying && !isBuffering && (
           <div className="testimonial-card__pause-overlay">
             <PauseIcon />
           </div>

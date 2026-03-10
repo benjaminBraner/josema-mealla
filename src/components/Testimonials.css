@@ -89,6 +89,32 @@
   pointer-events: none;
 }
 
+/* Loading / Buffering overlay */
+.testimonial-card__loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.testimonial-card__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: testimonialSpin 0.8s linear infinite;
+}
+
+@keyframes testimonialSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Pause overlay */
 .testimonial-card__pause-overlay {
   position: absolute;
