@@ -155,9 +155,10 @@ const TestimonialCard = ({ testimonial, index }) => {
       <div className="testimonial-card__video" onClick={togglePlay}>
         <video
           ref={videoRef}
-          src={testimonial.video}
+          src={`${testimonial.video}#t=0.001`}
           preload="metadata"
           playsInline
+          webkit-playsinline="true"
           onEnded={handleVideoEnd}
           onWaiting={handleWaiting}
           onCanPlayThrough={handleCanPlayThrough}
