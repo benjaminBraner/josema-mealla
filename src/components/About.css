@@ -86,7 +86,7 @@
   }
 
   .about__image-frame {
-    aspect-ratio: 3/2;
-    max-height: 320px;
+    aspect-ratio: 3/4;
+    max-height: 420px;
   }
 }
